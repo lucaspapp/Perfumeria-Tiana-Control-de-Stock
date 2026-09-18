@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard | Perfumería Tiana</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container-fluid min-vh-100">
+        <div class="row min-vh-100">
+            <aside class="col-12 col-md-3 col-lg-2 bg-success text-white p-3 d-md-flex flex-column">
+                <div class="d-flex align-items-center gap-2 mb-4 mb-md-5">
+                    <span class="bg-white text-success rounded p-2 fw-bold">PT</span>
+                    <div><strong class="d-block">Perfumería</strong><small class="text-white-50">Tiana</small></div>
+                </div>
+                <nav class="nav nav-pills flex-row flex-md-column gap-2">
+                    <a class="nav-link active text-start" href="index.html">Dashboard</a>
+                    <a class="nav-link text-white text-start" href="productos.html">Productos</a>
+                    <a class="nav-link text-white text-start" href="movimientos.html">Historial</a>
+                </nav>
+            </aside>
+            <main class="col-12 col-md-9 col-lg-10 p-3 p-md-4 p-xl-5">
+                <header class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2 mb-4">
+                    <div><p class="text-success text-uppercase small fw-bold mb-1">Sistema de control de stock</p><h1 class="h2 text-success-emphasis mb-0">Resumen general</h1></div>
+                    <span class="text-secondary small" id="fechaActual"></span>
+                </header>
+                <div id="mensaje" class="mb-3"></div>
+                <section class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 mb-3">
+                    <div><h2 class="h5 text-success-emphasis mb-1">Actividad del período</h2><p class="text-secondary mb-0" id="periodoTexto">Mes actual</p></div>
+                    <div class="d-flex align-items-center gap-2"><label for="periodo" class="form-label mb-0 small">Período</label><select id="periodo" class="form-select form-select-sm"><option value="dia">Hoy</option><option value="semana">Esta semana</option><option value="mes" selected>Este mes</option></select></div>
+                </section>
+                <section class="row g-3 mb-4">
+                    <div class="col-12 col-sm-6 col-xl-3"><div class="card border-success-subtle h-100"><div class="card-body"><p class="text-secondary small mb-2">Ingresos por ventas</p><strong id="ingresos" class="fs-4 text-success-emphasis d-block">$0</strong><span class="small text-success">Ventas registradas</span></div></div></div>
+                    <div class="col-12 col-sm-6 col-xl-3"><div class="card border-success-subtle h-100"><div class="card-body"><p class="text-secondary small mb-2">Ganancia estimada</p><strong id="ganancia" class="fs-4 text-success-emphasis d-block">$0</strong><span class="small text-success">Ingreso menos costo</span></div></div></div>
+                    <div class="col-12 col-sm-6 col-xl-3"><div class="card border-danger-subtle h-100"><div class="card-body"><p class="text-secondary small mb-2">Pérdidas</p><strong id="perdidas" class="fs-4 text-danger d-block">$0</strong><span class="small text-danger">Costo de productos perdidos</span></div></div></div>
+                    <div class="col-12 col-sm-6 col-xl-3"><div class="card border-success-subtle h-100"><div class="card-body"><p class="text-secondary small mb-2">Stock actual</p><strong id="existencias" class="fs-4 text-success-emphasis d-block">0</strong><span class="small text-secondary"><span id="productos">0</span> productos registrados</span></div></div></div>
+                </section>
+                <section class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2 mb-3"><div><h2 class="h5 text-success-emphasis mb-1">Movimientos por día</h2><p class="text-secondary mb-0 small">Detalle por producto del período seleccionado</p></div><a href="movimientos.html" class="btn btn-outline-success btn-sm">Ver historial completo</a></div>
+                        <div class="table-responsive d-none d-md-block"><table class="table table-hover align-middle mb-0"><thead><tr><th>Fecha</th><th>Producto</th><th>Entradas</th><th>Salidas</th><th>Ventas</th><th>Pérdidas</th></tr></thead><tbody id="tablaDiaria"><tr><td colspan="6" class="text-center text-secondary py-4">Cargando información...</td></tr></tbody></table></div>
+                        <div id="listaDiariaMovil" class="list-group list-group-flush d-md-none"><div class="list-group-item text-center text-secondary py-4">Cargando información...</div></div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
