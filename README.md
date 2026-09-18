@@ -1,6 +1,6 @@
 # Sistema de Control de Stock - Perfumería Tiana
 
-Aplicación académica para administrar productos, entradas, ventas, pérdidas, existencias e indicadores. Utiliza HTML5, Bootstrap 5 por CDN, JavaScript nativo, PHP con PDO y MySQL/MariaDB.
+Aplicación para administrar productos, entradas, ventas, pérdidas, existencias e indicadores. Utiliza HTML5, Bootstrap 5 por CDN, JavaScript nativo, PHP con PDO y MySQL/MariaDB.
 
 ## Estructura
 
