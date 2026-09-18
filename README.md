@@ -1,6 +1,6 @@
 # Sistema de Control de Stock - Perfumería Tiana
 
-Aplicación académica para administrar productos, entradas, ventas, pérdidas, existencias e indicadores. Utiliza HTML5, Bootstrap 5 por CDN, JavaScript nativo, PHP con PDO y MySQL/MariaDB. No utiliza Node.js ni CSS propio.
+Aplicación académica para administrar productos, entradas, ventas, pérdidas, existencias e indicadores. Utiliza HTML5, Bootstrap 5 por CDN, JavaScript nativo, PHP con PDO y MySQL/MariaDB.
 
 ## Estructura
 
@@ -24,7 +24,6 @@ Las vistas empiezan con layout de una columna y navegación superior en pantalla
 5. Revisar `api/conexion.php`. La configuración inicial usa servidor `localhost`, base `perfumeria_tiana`, usuario `root` y contraseña vacía, que es la configuración común de XAMPP.
 6. Abrir `http://localhost/perfumeria-tiana/`.
 
-La base ya fue instalada y probada en el XAMPP local del equipo. Se verificó que existan 100 productos, que el rango de movimientos sea exacto y que no haya existencias negativas.
 
 ## Datos iniciales
 
@@ -37,7 +36,6 @@ El SQL registra una compra inicial para cada producto, reposiciones cada 15 día
 - Ganancia estimada: ingresos menos costo de ventas.
 - Pérdidas: cantidad perdida por el precio de compra registrado para esa salida.
 
-Es una estimación simple y explicable; no implementa FIFO, LIFO ni contabilidad por lotes.
 
 ## API
 
@@ -46,12 +44,5 @@ Es una estimación simple y explicable; no implementa FIFO, LIFO ni contabilidad
 - `GET api/estadisticas.json?periodo=dia|semana|mes`
 - Detalle: `GET api/estadisticas.json?periodo=mes&producto_id=1`
 
-Las rutas `.json` son reescritas por Apache hacia los controladores PHP. La interfaz nunca accede directamente a MySQL: usa Fetch API para enviar y recibir JSON, y PHP usa PDO con consultas preparadas.
+Las rutas `.json` son reescritas por Apache hacia los controladores PHP. Usa Fetch API para enviar y recibir JSON, y PHP usa PDO con consultas preparadas.
 
-## Prueba rápida
-
-1. Abrir Productos.
-2. Registrar un producto con código único.
-3. Registrar una entrada, una venta y una pérdida.
-4. Revisar Dashboard e Historial.
-5. Probar los filtros por producto, tipo y fechas.
